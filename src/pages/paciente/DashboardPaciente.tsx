@@ -110,7 +110,7 @@ export default function DashboardPaciente() {
         <header className="bg-white border-b border-gray-200 px-8 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-xl text-gray-900">
-              Olá, <span className="font-semibold">{paciente.primeiroNome}</span>
+            Olá, <span className="font-semibold">{paciente.nome_completo ? paciente.nome_completo : 'Paciente'}</span>
             </h1>
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <span>Paciente</span>
