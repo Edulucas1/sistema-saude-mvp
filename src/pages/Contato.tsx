@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Activity, Mail, Phone, MapPin, Send, ArrowLeft } from 'lucide-react';
-import logoMedConnect from 'figma:asset/fdd8d35e8286bbfb03a0255f9eeb3eb33167ef71.png';
+import logoMedConnect from '../assets/logo-medconnect.png';
+
 export default function Contato() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -33,10 +34,7 @@ export default function Contato() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                <Activity className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-gray-900">MedConnect</span>
+              <img src={logoMedConnect} alt="MedConnect" className="h-34 w-auto object-contain" />
             </div>
             <button
               onClick={() => navigate('/')}

@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router';
-import { User, Building2, Heart } from 'lucide-react';
-import logoMedConnect from 'figma:asset/fdd8d35e8286bbfb03a0255f9eeb3eb33167ef71.png';
+import { User, Building2, Heart, Activity, Shield } from 'lucide-react';
+import logoMedConnect from '../assets/logo-medconnect.png';
+
 export default function Home() {
   const navigate = useNavigate();
 
@@ -18,6 +19,13 @@ export default function Home() {
       icon: Building2,
       path: '/clinica/login',
       color: 'from-purple-500 to-purple-600'
+    },
+    {
+      title: 'Suporte',
+      description: 'Acesso administrativo ao sistema',
+      icon: Shield,
+      path: '/suporte/login',
+      color: 'from-red-500 to-red-600'
     }
   ];
 
@@ -27,13 +35,7 @@ export default function Home() {
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center gap-3">
-            <div className="bg-gradient-to-br from-blue-500 to-green-500 p-2 rounded-lg">
-              <Heart className="w-8 h-8 text-white" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">MedConnect</h1>
-              <p className="text-sm text-gray-600">Sistema Integrado de Gestão de Saúde</p>
-            </div>
+           <img src={logoMedConnect} alt="MedConnect" className="h-34 w-auto object-contain" />
           </div>
         </div>
       </header>
@@ -49,7 +51,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {userTypes.map((type) => {
             const Icon = type.icon;
             return (

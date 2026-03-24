@@ -17,7 +17,7 @@ import {
   X
 } from 'lucide-react';
 import { useState } from 'react';
-import logoMedConnect from '../assets/logo.jpg';
+import logoMedConnect from '../assets/logo-medconnect.png';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -139,10 +139,7 @@ export default function LandingPage() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                <Activity className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-gray-900">MedConnect</span>
+             <img src={logoMedConnect} alt="MedConnect" className="h-34 w-auto object-contain" />
             </div>
 
             {/* Desktop Navigation */}
@@ -534,10 +531,7 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <Activity className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-lg font-bold">MedConnect</span>
+                <img src={logoMedConnect} alt="MedConnect" className="h-8" />
               </div>
               <p className="text-gray-400 text-sm">
                 Sistema Integrado de Gestão de Saúde

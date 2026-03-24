@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import {
   Home,
@@ -13,6 +13,7 @@ import {
   FlaskConical,
   LogOut
 } from 'lucide-react';
+import logoMedConnect from '../../assets/logo-medconnect.png';
 
 export default function DashboardPaciente() {
   const navigate = useNavigate();
@@ -22,27 +23,29 @@ export default function DashboardPaciente() {
     navigate('/');
   };
 
-  // 1. Estados para guardar os dados reais (substituem os dados fixos)
-  const [paciente, setPaciente] = useState({ nome: 'Carregando...', primeiroNome: '...' });
-  const [historicoRede, setHistoricoRede] = useState([]);
-  const [carregando, setCarregando] = useState(true);
+  // Dados mockados
+  const paciente = {
+    nome: 'Eduardo',
+    primeiroNome: 'Eduardo'
+  };
 
-  // 2. O useEffect busca os dados no Back-end assim que o Dashboard abre
-  useEffect(() => {
-    // Busca dados do paciente (ajuste o endereço se necessário)
-    fetch('http://localhost:3001/api/pacientes') 
-      .then(resposta => resposta.json())
-      .then(dados => {
-        // Se o banco retornar uma lista, pegamos o primeiro paciente
-        const dadosPaciente = Array.isArray(dados) ? dados[0] : dados;
-        setPaciente(dadosPaciente);
-        setCarregando(false);
-      })
-      .catch(erro => {
-        console.error("Erro ao buscar dados do banco:", erro);
-        setCarregando(false);
-      });
-  }, []); // Os colchetes vazios indicam que isso só roda UMA VEZ ao abrir a página
+  const historicoRede = [
+    {
+      data: '15 Out 2023',
+      clinica: 'Clínica Central',
+      profissional: 'Dr. Silva',
+      regiao: 'Consulta Real',
+      detalhes: 'Ver Detalhes'
+    },
+    {
+      data: '02 Set 2023',
+      clinica: 'Laboratório Vida',
+      profissional: '-',
+      regiao: 'Hemograma Completo',
+      detalhes: 'Ver Detalhes'
+    }
+  ];
+
   const menuItems = [
     { id: 'inicio', label: 'Início', icon: Home },
     { id: 'minha-saude', label: 'Minha Saúde', icon: Activity },
@@ -65,12 +68,7 @@ export default function DashboardPaciente() {
       <aside className="w-64 bg-gradient-to-b from-blue-700 to-blue-800 text-white flex flex-col">
         {/* Logo */}
         <div className="p-6 border-b border-blue-600">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-              <Activity className="w-5 h-5 text-blue-700" />
-            </div>
-            <span className="font-bold text-lg">MedConnect</span>
-          </div>
+         <img src={logoMedConnect} alt="MedConnect" className="h-35 w-auto object-contain" />
         </div>
 
         {/* Menu */}
@@ -110,7 +108,7 @@ export default function DashboardPaciente() {
         <header className="bg-white border-b border-gray-200 px-8 py-4">
           <div className="flex items-center justify-between">
             <h1 className="text-xl text-gray-900">
-            Olá, <span className="font-semibold">{paciente.nome_completo ? paciente.nome_completo : 'Paciente'}</span>
+              Olá, <span className="font-semibold">{paciente.primeiroNome}</span>
             </h1>
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <span>Paciente</span>

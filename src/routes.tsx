@@ -1,13 +1,19 @@
-import { createBrowserRouter } from 'react-router-dom'; 
+import { createBrowserRouter } from 'react-router';
 import LandingPage from './pages/LandingPage';
 import Home from './pages/Home';
 import Contato from './pages/Contato';
 import LoginPaciente from './pages/paciente/LoginPaciente';
 import DashboardPaciente from './pages/paciente/DashboardPaciente';
+import DashboardPacienteCompleto from './pages/paciente/DashboardPacienteCompleto';
 import LoginMedico from './pages/medico/LoginMedico';
+import LoginMedicoCompleto from './pages/medico/LoginMedicoCompleto';
 import DashboardMedico from './pages/medico/DashboardMedico';
+import DashboardMedicoCompleto from './pages/medico/DashboardMedicoCompleto';
 import LoginClinica from './pages/clinica/LoginClinica';
 import DashboardClinica from './pages/clinica/DashboardClinica';
+import DashboardClinicaCompleto from './pages/clinica/DashboardClinicaCompleto';
+import LoginSuporte from './pages/suporte/LoginSuporte';
+import DashboardSuporte from './pages/suporte/DashboardSuporte';
 
 export const router = createBrowserRouter([
   {
@@ -28,15 +34,19 @@ export const router = createBrowserRouter([
   },
   {
     path: '/paciente/dashboard',
-    element: <DashboardPaciente />
+    element: <DashboardPacienteCompleto />
   },
   {
     path: '/medico/login',
-    element: <LoginMedico />
+    element: <LoginMedicoCompleto />
   },
   {
     path: '/medico/dashboard',
     element: <DashboardMedico />
+  },
+  {
+    path: '/medico/dashboard-completo',
+    element: <DashboardMedicoCompleto />
   },
   {
     path: '/clinica/login',
@@ -44,6 +54,18 @@ export const router = createBrowserRouter([
   },
   {
     path: '/clinica/dashboard',
-    element: <DashboardClinica />
+    element: <DashboardClinicaCompleto />
+  },
+  {
+    path: '/clinica/dashboard-completo',
+    element: <DashboardClinicaCompleto />
+  },
+  {
+    path: '/suporte/login',
+    element: <LoginSuporte />
+  },
+  {
+    path: '/suporte/dashboard',
+    element: <DashboardSuporte />
   }
 ]);
