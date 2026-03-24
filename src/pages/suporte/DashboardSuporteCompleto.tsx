@@ -408,7 +408,7 @@ export default function DashboardSuporteCompleto() {
           
           {/* LOGO OFICIAL MEDCONNECT AQUI */}
           <div className="bg-white p-3 mb-4 rounded-lg flex justify-center shadow-md">
-            <img src={logoMedConnect} alt="MedConnect" className="h-10 w-auto object-contain" />
+            <img src={logoMedConnect} alt="MedConnect" className="h-36 w-auto object-contain" />
           </div>
           
           <div className="bg-red-500/30 rounded-lg p-3">

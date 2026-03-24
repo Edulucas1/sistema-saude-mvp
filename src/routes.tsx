@@ -14,6 +14,7 @@ import DashboardClinica from './pages/clinica/DashboardClinica';
 import DashboardClinicaCompleto from './pages/clinica/DashboardClinicaCompleto';
 import LoginSuporte from './pages/suporte/LoginSuporte';
 import DashboardSuporte from './pages/suporte/DashboardSuporte';
+import DashboardSuporteCompleto from './pages/suporte/DashboardSuporteCompleto';
 
 export const router = createBrowserRouter([
   {
@@ -66,6 +67,6 @@ export const router = createBrowserRouter([
   },
   {
     path: '/suporte/dashboard',
-    element: <DashboardSuporte />
+    element: <DashboardSuporteCompleto />
   }
 ]);

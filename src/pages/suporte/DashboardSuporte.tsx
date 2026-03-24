@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import {
   Shield,
   Building2,
@@ -12,7 +12,7 @@ import {
   Save,
   X
 } from 'lucide-react';
-import logoMedConnect from "../../assets/logo-medconnect.png";
+import logoMedConnect from '../../assets/logo-medconnect.png';
 
 interface Empresa {
   id: string;
@@ -138,7 +138,7 @@ export default function DashboardSuporte() {
       <aside className="w-64 bg-gradient-to-b from-red-600 to-red-700 text-white flex flex-col">
         {/* Logo */}
         <div className="p-6 border-b border-red-500">
-        <img src={logoMedConnect} alt="MedConnect" className="h-35 w-auto object-contain" />
+          <img src={logoMedConnect} alt="MedConnect" className="h-36 brightness-0 invert" />
         </div>
 
         {/* Menu */}
